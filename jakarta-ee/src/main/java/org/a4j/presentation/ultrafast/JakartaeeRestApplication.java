@@ -1,4 +1,4 @@
-package org.a4j.presentation.ultrafast.jakarta.ee;
+package org.a4j.presentation.ultrafast;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.ApplicationPath;

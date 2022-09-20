@@ -1,4 +1,4 @@
-package org.a4j.presentation.ultrafast.jakarta.ee.config;
+package org.a4j.presentation.ultrafast.config;
 
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
