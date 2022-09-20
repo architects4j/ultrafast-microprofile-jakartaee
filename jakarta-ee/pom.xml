@@ -27,6 +27,12 @@
             <artifactId>microstream-integrations-cdi</artifactId>
             <version>07.00.00-MS-GA</version>
         </dependency>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>8.0.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
         <finalName>jakarta-ee</finalName>
