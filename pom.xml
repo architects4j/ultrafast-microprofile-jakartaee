@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
   
   <modules>
-    <module>java-se</module>
+    <module>cdi-se</module>
     <module>microprofile</module>
     <module>jakarta-ee</module>
   </modules>
