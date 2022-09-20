@@ -1,4 +1,4 @@
-package org.a4j.workshop.helidon.restaurant;
+package org.a4j.presentation.ultrafast;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;

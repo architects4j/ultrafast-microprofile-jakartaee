@@ -1,7 +1,7 @@
-package org.a4j.workshop.helidon.restaurant;
+package org.a4j.presentation.ultrafast;
 
 
-import org.a4j.workshop.helidon.restaurant.infra.FieldPropertyVisibilityStrategy;
+import org.a4j.presentation.ultrafast.infra.FieldPropertyVisibilityStrategy;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.json.bind.annotation.JsonbCreator;

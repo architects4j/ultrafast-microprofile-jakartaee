@@ -1,4 +1,4 @@
-package org.a4j.workshop.helidon.restaurant;
+package org.a4j.presentation.ultrafast;
 public enum ItemType {
     BEVERAGE, FOOD;
 }
