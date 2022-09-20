@@ -22,18 +22,37 @@ To launch the test page, open your browser at the following URL
 
 
 
-## Specification examples
+To execute the tests:
 
-By default, there is always the creation of a JAX-RS application class to define the path on which the JAX-RS endpoints are available.
+```shell
+curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "water", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", 
+"expires": "2025-12-03", "ingredients": [{"name": "water", "unit": "L", "quantity": 2}]}'
 
-Also, a simple Hello world endpoint is created, have a look at the class **HelloController**.
+curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "coconut-water", "description": "Coconut water is the clear liquid inside coconuts.", "type": "BEVERAGE", 
+"expires": "2025-12-03", "ingredients": [{"name": "coconut water", "unit": "L", "quantity": 1}]}'
 
-More information on MicroProfile can be found [here](https://microprofile.io/)
 
+curl --location --request GET 'http://localhost:8080/restaurants/water'
 
-### Config
+curl --location --request GET 'http://localhost:8080/restaurants'
+```
 
-Configuration of your application parameters. Specification [here](https://microprofile.io/project/eclipse/microprofile-config)
+Validations tests:
 
-The example class **ConfigTestController** shows you how to inject a configuration parameter and how you can retrieve it programmatically.
+```shell
+curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{"description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2030-12-03"}'
 
+curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "water", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2000-12-03"}'
+
+curl --location --request POST 'http://localhost:8080/restaurants' \
+--header 'Content-Type: application/json' \
+--data-raw '{"name": "w", "description": "Water appears as a clear, nontoxic liquid composed of hydrogen and oxygen, essential for life.", "type": "BEVERAGE", "expires": "2025-12-03"}'
+```
