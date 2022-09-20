@@ -1,5 +1,5 @@
 
-package org.a4j.workshop.helidon.microstream;
+package org.a4j.presentation.ultrafast;
 
 /*-
  * #%L
