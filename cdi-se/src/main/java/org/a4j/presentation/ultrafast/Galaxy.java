@@ -4,6 +4,7 @@ import one.microstream.integrations.cdi.types.Storage;
 
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -17,6 +18,17 @@ public class Galaxy {
         this.bodies.add(body);
     }
 
+    public Optional<CelestialBody> findByName(String name) {
+        Objects.requireNonNull(name, "name is required");
+        return this.bodies.stream()
+                .filter(b -> name.equals(b.getName()))
+                .findFirst();
+    }
+
+    public void deleteById(String name) {
+        Objects.requireNonNull(name, "name is required");
+        this.bodies.removeIf(b -> name.equals(b.getName()));
+    }
 
     public String getCelestialNames(){
         return bodies.stream()
@@ -24,8 +36,4 @@ public class Galaxy {
                 .collect(Collectors.joining(","));
     }
 
-    //Create
-    //retrieve
-    //update
-    //delete
 }
