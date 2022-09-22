@@ -17,13 +17,12 @@ import java.util.Set;
  */
 @ApplicationPath("/")
 @ApplicationScoped
-public class RestaurantRestApplication extends Application {
+public class RestApplication extends Application {
 
     @Override
     public Set<Class<?>> getClasses() {
         Set<Class<?>> classes = new HashSet<>();
         classes.add(HelloController.class);
-        classes.add(RestaurantController.class);
         return classes;
     }
 }
