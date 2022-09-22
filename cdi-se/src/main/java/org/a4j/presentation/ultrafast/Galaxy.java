@@ -2,6 +2,7 @@ package org.a4j.presentation.ultrafast;
 
 import one.microstream.integrations.cdi.types.Storage;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Optional;
@@ -34,6 +35,10 @@ public class Galaxy {
         return bodies.stream()
                 .map(CelestialBody::getName)
                 .collect(Collectors.joining(","));
+    }
+
+    public Set<CelestialBody> getBodies() {
+        return Collections.unmodifiableSet(this.bodies);
     }
 
     @Override
