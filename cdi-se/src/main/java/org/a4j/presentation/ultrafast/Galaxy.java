@@ -36,4 +36,10 @@ public class Galaxy {
                 .collect(Collectors.joining(","));
     }
 
+    @Override
+    public String toString() {
+        return "Galaxy{" +
+                "bodies=" + bodies +
+                '}';
+    }
 }
