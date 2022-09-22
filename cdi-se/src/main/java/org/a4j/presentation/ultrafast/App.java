@@ -26,21 +26,20 @@ import one.microstream.storage.types.StorageManager;
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
 
-
 public class App {
     public static void main(final String[] args) {
-        try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
-            final StorageManager manager = container.select(StorageManager.class).get();
-            final Object root = manager.root();
-            System.out.println("The root value: " + root);
-            final NamesService service = container.select(NamesService.class).get();
 
-            System.out.println("The names: " + service.getNames());
-            service.add("Sebastian");
-            service.add("Otavio");
-            service.add("Ada");
-            service.add("Mari");
+        try(SeContainer container = SeContainerInitializer.newInstance().initialize()) {
+            StorageManager manager = container.select(StorageManager.class).get();
+            Object root = manager.root();
+            System.out.println("the root value: " + root);
+            final GalaxyService service= container.select(GalaxyService.class).get();
+            CelestialBody sun = CelestialBody.builder().name("Sun")
+                    .size(1231231231)
+                    .type(Type.STAR)
+                    .habitable(false).build();
+            service.add(sun);
+            System.out.println("The bodies are: " + service.getNames());
         }
-        System.exit(0);
     }
 }

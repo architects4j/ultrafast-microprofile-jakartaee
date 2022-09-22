@@ -26,7 +26,7 @@ public class CelestialBodyBuilder {
         return this;
     }
 
-    public CelestialBody createCelestialBody() {
+    public CelestialBody build() {
         return new CelestialBody(name, size, habitable, type);
     }
 }
