@@ -38,7 +38,14 @@ public class App {
                     .size(1231231231)
                     .type(Type.STAR)
                     .habitable(false).build();
+
+            CelestialBody earth = CelestialBody.builder().name("Earth")
+                    .size(1231231231)
+                    .type(Type.PLANET)
+                    .habitable(true)
+                    .build();
             service.add(sun);
+            service.add(earth);
             System.out.println("The bodies are: " + service.getNames());
         }
     }
