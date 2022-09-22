@@ -46,7 +46,12 @@ public class App {
                     .build();
             service.add(sun);
             service.add(earth);
+
             System.out.println("The bodies are: " + service.getNames());
+            System.out.println("The Sun search: " + service.findById("Sun"));
+            service.delete("Sun");
+            System.out.println("The Sun search: " + service.findById("Sun"));
+
         }
     }
 }
