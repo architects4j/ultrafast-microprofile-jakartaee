@@ -1,5 +1,7 @@
 package org.a4j.presentation.ultrafast;
 
+import javax.json.bind.annotation.JsonbCreator;
+import javax.json.bind.annotation.JsonbProperty;
 import java.util.Objects;
 
 public class CelestialBody {
@@ -12,7 +14,11 @@ public class CelestialBody {
 
     private Type type;
 
-    public CelestialBody(String name, long size, boolean habitable, Type type) {
+    @JsonbCreator
+    public CelestialBody(@JsonbProperty("name") String name,
+                         @JsonbProperty("size") long size,
+                         @JsonbProperty("habitable") boolean habitable,
+                         @JsonbProperty("type") Type type) {
         this.name = name;
         this.size = size;
         this.habitable = habitable;
