@@ -4,7 +4,9 @@ import one.microstream.integrations.cdi.types.Store;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import java.util.Collections;
 import java.util.Optional;
+import java.util.Set;
 
 @ApplicationScoped
 public class GalaxyService {
@@ -28,5 +30,9 @@ public class GalaxyService {
 
     public String getNames() {
         return this.galaxy.getCelestialNames();
+    }
+
+    public Set<CelestialBody> getBodies() {
+        return this.galaxy.getBodies();
     }
 }
