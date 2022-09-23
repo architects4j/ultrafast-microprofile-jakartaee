@@ -4,6 +4,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.WebApplicationException;
@@ -23,7 +24,7 @@ public class GalaxyResource {
         return this.service.getBodies();
     }
 
-    @POST
+    @PUT
     public void add(CelestialBody body){
         this.service.add(body);
     }
