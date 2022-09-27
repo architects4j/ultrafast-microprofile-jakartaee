@@ -35,8 +35,9 @@
         </dependency>
         <dependency>
             <groupId>org.jboss.weld</groupId>
-            <artifactId>weld-junit-parent</artifactId>
+            <artifactId>weld-junit5</artifactId>
             <version>4.0.0.Final</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -44,7 +45,6 @@
             <version>5.9.1</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
 </project>
